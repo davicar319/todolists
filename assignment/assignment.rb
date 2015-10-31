@@ -35,9 +35,7 @@ class Assignment
   # Query DB with exact match
   #
   def find_user_byname(username)
-      # accept a username input parameter
-      # use the User Model class to find all Users with the supplied username. Note that we have not yet constrained the username to be unique.
-      # return a collection of User instances that match the provided username
+    User.where(username: username).to_a
   end 
 
   def find_todolist_byname(name)
