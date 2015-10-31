@@ -63,9 +63,9 @@ class Assignment
   end
 
   def update_listname(id, name)
-      # accept an id and name input parameters
-      # use the TodoList Model class to update the `list_name` for the TodoList associated with id primary key 
-      # (no return is required)
+    todolist = TodoList.find(id)
+    todolist.list_name = name
+    todolist.save
   end 
 
   #
