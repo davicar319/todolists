@@ -47,12 +47,10 @@ class Assignment
   #
   def get_user_byid(id)
     User.find(id)
-      # accept an id input parameter
-      # use the User Model class to get the User associated with the `id` primary key
-      # return the User instance that matches the provided id
   end
 
   def get_todolist_byid(id)
+    TodoList.find(id)
       # accept an id input parameter
       # use the TodoList Model class to get the TodoList associated with the `id` primary key
       # return the TodoList instance that matches the provided id
