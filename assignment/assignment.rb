@@ -7,9 +7,6 @@ class Assignment
   # Insert rows in DB
   #
   def create_user(params)
-      # accept a hash of user properties (`:username` and `:password_digest`) as an input parameter. Note these are 100% same as model class.
-      # use the User Model class to create a new user in the DB
-      # return an instance of the class with primary key (`id`), and dates (`created_at` and `updated_at`) assigned
       user = User.new
       user.username = params[:username]
       user.password_digest = params[:password_digest]
@@ -27,9 +24,7 @@ class Assignment
   # Retrieve paginated results from DB
   #
   def find_allusers(offset, limit)
-      # accept offset and input input parameters
-      # use the User Model class to find all Users, ordered by `updated_at` ascending, with specified row offset and row limit
-      # return a collection of User instances that represent the specified page
+    User.offset(offset).limit(limit).to_a
   end
 
   def find_alllists(offset, limit)
